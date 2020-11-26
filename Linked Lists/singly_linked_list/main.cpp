@@ -33,7 +33,7 @@ public:
     }
 
     void insert(int index,int value){ // İstenen indexe ekleme
-        int counter=0;
+        int counter{0};
         node *it=head;
 
         while(counter!=index-1){
@@ -82,6 +82,7 @@ public:
             cout<<it->value<<" ";
             it=it->next;
         }
+        cout<<endl;
     }
 
     void  deleteNode(int value){
@@ -100,6 +101,27 @@ public:
         if(it->next == nullptr) {
             cout << "Value not found" << endl;
             return;
+        }
+
+        temp=it->next;
+        it->next=it->next->next;
+        free(temp);
+        return;
+    }
+
+    void deleteNodeAt(int index){ // Indexteki elemanı silme
+        node *it=head;
+        node *temp;
+        int counter{0};
+
+        if(index==0){
+            head=head->next;
+            return;
+        }
+
+        while(counter!=index-1){
+            it=it->next;
+            counter++;
         }
 
         temp=it->next;
@@ -155,9 +177,24 @@ void test3(){ //İstenen indexe ekleme
     test.display();
 }
 
+void test4(){ //İstenen indexten elemean silme
+    LinkedList test;
+    vector<int> vec{1,2,3,4,5,6,7,8,9,10};
+
+    for(int num:vec)
+        test.insertInOrder(num);
+
+    test.display();
+    test.deleteNodeAt(0); // kök silme durumu
+    test.deleteNodeAt(5);// ara eleman silme
+    test.deleteNodeAt(7);// son eleman silme
+    test.display();
+}
 int main() {
     //test1();
     //test2();
-    test3();
+    //test3();
+    test4();
+
     return 0;
 }
