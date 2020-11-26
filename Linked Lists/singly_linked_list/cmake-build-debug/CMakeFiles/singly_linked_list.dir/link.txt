@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/singly_linked_list.dir/main.cpp.o  -o singly_linked_list 
