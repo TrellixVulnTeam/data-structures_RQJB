@@ -1,0 +1,2 @@
+== Data Structures in C++/Python
+* https://github.com/tayfunkscu/data-structures/tree/main/Linked%20Lists[Linked Lists]

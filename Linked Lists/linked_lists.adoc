@@ -1,0 +1,9 @@
+== Linked Lists
+* https://github.com/tayfunkscu/data-structures/tree/main/Linked%20Lists/C%2B%2B[C++ Examples]
+
+* https://github.com/tayfunkscu/data-structures/tree/main/Linked%20Lists/Python[Python Examples]
+
+=== Contents
+* Singly Linked List
+* Doubly Linked List
+* Circular Linked List
