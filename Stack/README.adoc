@@ -1,4 +1,4 @@
 == Stack
-* https://github.com/tayfunkscu/data-structures/tree/main/Stack/C%2B%2B[C++ Examples]
+* https://github.com/tayfunkscu/data-structures/tree/main/Stack/C%2B%2B/stack[C++ Examples]
 
-* https://github.com/tayfunkscu/data-structures/tree/main/Stack/Python[Python Examples]
+* https://github.com/tayfunkscu/data-structures/tree/main/Stack/Python/stack[Python Examples]
