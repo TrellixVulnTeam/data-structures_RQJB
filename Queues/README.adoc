@@ -1,6 +1,6 @@
-== Stack
+== Queues
 Implemented by using Linked List
 
-* https://github.com/tayfunkscu/data-structures/tree/main/Stack/C%2B%2B/queue[C++ Examples]
+* https://github.com/tayfunkscu/data-structures/tree/main/Queues/C%2B%2B/queque[C++ Examples]
 
-* https://github.com/tayfunkscu/data-structures/tree/main/Stack/Python/queue[Python Examples]
+* https://github.com/tayfunkscu/data-structures/tree/main/Queues/Python/queue[Python Examples]
