@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="WSL_profile" CONFIG_NAME="Release" TOOLCHAIN_NAME="WSL" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39417ec2-3dfb-40b0-8b54-6ac4ce21794b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1l93XbqCRJXzjOQ1428szuq5eFq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../C++/queque" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39417ec2-3dfb-40b0-8b54-6ac4ce21794b" name="Default Changelist" comment="" />
+      <created>1606995521527</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606995521527</updated>
+      <workItem from="1606995531783" duration="1289000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2469" y="172" key="FileChooserDialogImpl" timestamp="1606997954525">
+      <screen x="1920" y="0" width="1536" height="840" />
+    </state>
+    <state x="2469" y="172" key="FileChooserDialogImpl/1920.0.1536.840/0.0.1920.1050@1920.0.1536.840" timestamp="1606997954525" />
+    <state width="1493" height="285" key="GridCell.Tab.0.bottom" timestamp="1606997956096">
+      <screen x="1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1606996734291" />
+    <state width="1493" height="285" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@1920.0.1536.840" timestamp="1606997956096" />
+    <state width="1493" height="285" key="GridCell.Tab.0.center" timestamp="1606997956096">
+      <screen x="1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1606996734291" />
+    <state width="1493" height="285" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@1920.0.1536.840" timestamp="1606997956096" />
+    <state width="1493" height="285" key="GridCell.Tab.0.left" timestamp="1606997956096">
+      <screen x="1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1606996734290" />
+    <state width="1493" height="285" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@1920.0.1536.840" timestamp="1606997956096" />
+    <state width="1493" height="285" key="GridCell.Tab.0.right" timestamp="1606997956096">
+      <screen x="1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1606996734291" />
+    <state width="1493" height="285" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@1920.0.1536.840" timestamp="1606997956096" />
+  </component>
+</project>
