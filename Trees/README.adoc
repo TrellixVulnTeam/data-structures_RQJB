@@ -1,0 +1,8 @@
+== Trees
+
+* https://github.com/tayfunkscu/data-structures/tree/main/Trees/C%2B%2B[C++ Examples]
+
+* https://github.com/tayfunkscu/data-structures/tree/main/Trees/Python[Python Examples]
+
+=== Contents
+* Binary Search Tree

@@ -2,3 +2,4 @@
 * https://github.com/tayfunkscu/data-structures/tree/main/Linked%20Lists[Linked Lists]
 * https://github.com/tayfunkscu/data-structures/tree/main/Stack[Stack]
 * https://github.com/tayfunkscu/data-structures/tree/main/Queues[Queues]
+* https://github.com/tayfunkscu/data-structures/tree/main/Trees[Trees]

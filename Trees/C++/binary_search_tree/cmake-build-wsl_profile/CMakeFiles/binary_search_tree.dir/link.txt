@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/binary_search_tree.dir/main.cpp.o  -o binary_search_tree 
