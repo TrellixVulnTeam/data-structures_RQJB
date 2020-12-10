@@ -1,0 +1,270 @@
+== C++ Zaman İşlemleri
+
+https://levelup.gitconnected.com/8-ways-to-measure-execution-time-in-c-c-48634458d0f9[Kaynak] 
+
+=== Wall time ve CPU time nedir? Farklılıkları nelerdir?
+
+İki terim arasındaki farkı aşağıdaki gibi açıklayabiliriz:
+
+*Wall time:* Günlük hayatta takip ettiğimiz standart saati baz alır. Kronometreyi belirli noktalarda çalıştırıp durdurarak ölçebileceğimiz zamandır.
+
+*CPU time:* İşlemcinin program talimatlarını işlemekle meşgul olduğu zamanı temsil eder. Giriş/Çıkış(Input/Output) işlemlerinde harcanan zaman işlemci süresine dahil olmaz.
+
+Bu seçeneklerden hangisinin kullanılacağı programın çalışma süresini neden ölçtüğümüz ile alakalıdır.
+
+=== 1. Linux komutu olan ‘time’ kullanımı 
+
+Sadece Linux üzerinde çalışır, terminal üzerinden çalıştırılacak programlarda kullanılabilir. Wall time ve CPU time'ı ölçer.
+
+Programınız için basit bir şekilde CPU ve wall time'ı ölçmek istiyorsanız, terminal üzerinde program adının önce *time* ekleyerek çalıştırarak geçen zamana ulaşabilirsiniz.
+
+[source,]
+----
+$ time ./MyProgram
+Result: 2.00000000000000000000 
+ 
+real 0m5.931s 
+user 0m5.926s 
+sys 0m0.005s
+----
+
+Çıktıda "real" wall time'ı temsil eder, "user" ise CPU time'ı ölçer. Programınızın belirli kısımlarınıdaki süreyi ölçmek istiyorsanız aşağıdaki seçeneklere bakınız.
+
+=== 2. <chrono>
+
+Linux ve Windows üzerinde çalışır. Wall time'ı ölçer. C++ 11 ve sonrası gereklidir.
+
+<chrono> kütüphanesi, her biri farklı amaçlara ve özelliklere sahip birkaç farklı saate erişime sahiptir. Her saat türü için detaylı bilgiye https://en.cppreference.com/w/cpp/chrono[buradan] ulaşabilirsiniz. Fakat başka saat türüne ihtiyacınız olmadıkça kullanılması önerilen saat türü *high_resolution_clock*'tur.
+
+[source,]
+----
+#include <stdio.h>
+#include <chrono>
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    auto begin = std::chrono::high_resolution_clock::now();
+    
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+    
+    // Stop measuring time and calculate the elapsed time
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+    
+    printf("Result: %.20f\n", sum);
+    
+    printf("Time measured: %.3f seconds.\n", elapsed.count() * 1e-9);
+    
+    return 0;
+}
+----
+
+19. satırda görebileceğiniz gibi, ölçülen zamanı nanosaniye seçtik (daha sonra saniyeye dönüştürdük). Kodu dilediğiniz zaman türüne göre **chrono::hours**, **chrono::minutes**, **chrono::seconds**, **chrono::milliseconds** ya da **chrono::microseconds** kullanarak değiştirebilirsiniz.
+
+=== 3. <sys/time.h> ve gettimeofday()
+
+*gettimeofday()* 00:00:00 UTC formatında zamanı döndürü, fonskiyon saniyeleri ve mikrosaniyeleri ayrı *long int* değişkenleri içinde tutar, böylece mikrosaniyeleri de içeren toplam süreyi elde etmek için her ikisini de buna göre toplamanız gerekir. Bunun nasıl yapılacağı aşağıda açıklanmıştır:
+[source,]
+----
+#include <stdio.h>
+#include <sys/time.h>
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    struct timeval begin, end;
+    gettimeofday(&begin, 0);
+    
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+    
+    // Stop measuring time and calculate the elapsed time
+    gettimeofday(&end, 0);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    
+    printf("Result: %.20f\n", sum);
+    
+    printf("Time measured: %.3f seconds.\n", elapsed);
+    
+    return 0;
+}
+----
+
+*Not 1:* Saniyelerin kesirlerini önemsemiyorsanız, geçen süreyi doğrudan end.tv_sec - begin.tv_sec hesaplayarak elde edebilirsiniz.
+
+*Not 2:* gettimeofday () öğesinin ikinci bağımsız değişkeni, geçerli saat dilimini belirtmek için kullanılır. Geçen zamanı hesapladığımız için, aynı değerin hem başlangıç hem de bitiş için kullanılması koşuluyla, saat dilimleri önemsizdir. Böylece her iki arama için de sıfır kullandık.
+
+=== 5. <time.h> ve clock()
+
+Linux üzerine CPU time'ı, Windows üzerinde ise wall time'ı ölçer.
+
+*clock()* fonksiyonu, program çalışmaya başladığından beri saat tiklerinin sayısını döndürür. Bunu *CLOCKS_PER_SEC* sabitine bölerseniz, programın ne kadar süredir çalıştığını saniyeler içinde alırsınız.
+[source,]
+----
+#include <stdio.h>
+#include <time.h>
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    clock_t start = clock();
+    
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+
+    // Stop measuring time and calculate the elapsed time
+    clock_t end = clock();
+    double elapsed = double(end - start)/CLOCKS_PER_SEC;
+    
+    printf("Result: %.20f\n", sum);
+    
+    printf("Time measured: %.3f seconds.\n", elapsed);
+    
+    return 0;
+}
+----
+
+*Not:* clock_t  bir long int'dir, bu nedenle CLOCKS_PER_SEC ile bölmeden önce onu bir float türüne dönüştürmeniz gerekir, aksi takdirde bir integer sonuç elde edersiniz.
+
+=== 6. <time.h> ve clock_gettime()
+
+Linux üzerinde çalışır, CPU time ve wall time'ı ölçer.
+
+Aşağıdaki örnek wall time'ı ölçer, ancak bunu yalnızca *CLOCK_REALTIME* sabitini *CLOCK_PROCESS_CPUTIME_ID* ile değiştirerek CPU time'ı ölçmek için değiştirebilirsiniz.
+
+[source,]
+----
+#include <stdio.h>
+#include <time.h>
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    struct timespec begin, end; 
+    clock_gettime(CLOCK_REALTIME, &begin);
+    
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+    
+    // Stop measuring time and calculate the elapsed time
+    clock_gettime(CLOCK_REALTIME, &end);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long nanoseconds = end.tv_nsec - begin.tv_nsec;
+    double elapsed = seconds + nanoseconds*1e-9;
+    
+    printf("Result: %.20f\n", sum);
+    
+    printf("Time measured: %.3f seconds.\n", elapsed);
+    
+    return 0;
+}
+----
+
+=== 7. With <sysinfoapi.h> and GetTickCount64()
+
+Sadece Windows üzerinde çalışır wall time'ı ölçer.
+
+*GetTickCount64()* fonskiyonu, sistemin başlatılmasından bu yana geçen milisaniye sayısını döndürür. 32 bitlik bir sürümü de vardır *GetTickCount ()*, ancak 49.71 günle sınırlıdır, bu nedenle 64 bit olanı kullanmak biraz daha güvenlidir. Nasıl kullanılacağı aşağıda açıklanmıştır:
+
+[source,]
+----
+#include <stdio.h>
+#include <sysinfoapi.h>
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    long long int begin = GetTickCount64();
+
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+
+    // Stop measuring time and calculate the elapsed time
+    long long int end = GetTickCount64();
+    double elapsed = (end - begin)*1e-3;
+
+    printf("Result: %.20f\n", sum);
+
+    printf("Time measured: %.3f seconds.\n", elapsed);
+
+    return 0;
+}
+----
+
+=== 8. <processthreadsapi.h> ve GetProcessTimes()
+
+Sadece Windows üzerinde çalışır, CPU time'ı ölçer.
+
+Windows'ta CPU süresini ölçmek için kullanılabilen tek yöntemdir. Dökümantasyonuna https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes[buradan] ulaşabilirsiniz.
+[source,]
+----
+#include <stdio.h>
+#include <processthreadsapi.h>
+
+double get_cpu_time(){
+    FILETIME a,b,c,d;
+    if (GetProcessTimes(GetCurrentProcess(),&a,&b,&c,&d) != 0){
+        //  Returns total user time.
+        //  Can be tweaked to include kernel times as well.
+        return
+            (double)(d.dwLowDateTime |
+            ((unsigned long long)d.dwHighDateTime << 32)) * 0.0000001;
+    }else{
+        //  Handle error
+        return 0;
+    }
+}
+
+int main () {
+    double sum = 0;
+    double add = 1;
+
+    // Start measuring time
+    double begin = get_cpu_time();
+
+    int iterations = 1000*1000*1000;
+    for (int i=0; i<iterations; i++) {
+        sum += add;
+        add /= 2.0;
+    }
+
+    // Stop measuring time and calculate the elapsed time
+    double end = get_cpu_time();
+    double elapsed = (end - begin);
+
+    printf("Result: %.20f\n", sum);
+
+    printf("Time measured: %.3f seconds.\n", elapsed);
+
+    return 0;
+}
+----
