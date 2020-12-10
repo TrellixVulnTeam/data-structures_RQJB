@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/d/GitRepos/data-structures/Linked Lists/singly_linked_list/main.cpp" "/mnt/d/GitRepos/data-structures/Linked Lists/singly_linked_list/cmake-build-wsl_profile/CMakeFiles/singly_linked_list.dir/main.cpp.o"
+  "/mnt/d/GitRepos/data-structures/Linked Lists/C++/singly_linked_list/main.cpp" "/mnt/d/GitRepos/data-structures/Linked Lists/C++/singly_linked_list/cmake-build-wsl_profile/CMakeFiles/singly_linked_list.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

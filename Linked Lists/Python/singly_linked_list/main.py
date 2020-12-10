@@ -1,3 +1,6 @@
+import time
+
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -101,18 +104,25 @@ class Node:
 
 
 def test1():
+    begin = time.time()
+
     linkedlist = LinkedList()
-    for i in range(10):
+    for i in range(100000000):
         linkedlist.insert(i)
 
-    linkedlist.display()
-    linkedlist.deleteNode(5)
-    linkedlist.display()
-    linkedlist.deleteNode(0)
-    linkedlist.display()
-    linkedlist.deleteNode(9)
-    linkedlist.display()
-    linkedlist.deleteNode(10)
+    t1 = time.time()
+    insertion = t1 - begin
+
+    for i in range(100000000):
+        linkedlist.deleteNode(i)
+
+    end = time.time()
+    deletion = end - t1
+    elapsed = end - begin
+
+    print("Insertion : {:.4f} s".format(insertion))
+    print("Deletion : {:.4f} s".format(deletion))
+    print("Time taken: {:.4f} s ".format(elapsed))
 
 
 def test2():
@@ -138,6 +148,6 @@ def test3():
 
 
 if __name__ == '__main__':
-    # test1()
+    test1()
     # test2()
-    test3()
+    # test3()

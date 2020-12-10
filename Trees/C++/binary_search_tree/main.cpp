@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <chrono>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ public:
     ~BinarySearchTree(){}
 
     void insert(node *value){
-        node *temp;
+        node *temp{nullptr};
         node *it=root;
 
         while (it!= nullptr){
@@ -152,7 +153,35 @@ void test1(){
     cout<<"\nInOrderTraversal"<<endl;
     bst.InOrderTraversal(bst.getRoot());
 }
+void test2(){
+    BinarySearchTree bst;
+    vector<node*> nodes;
+
+    auto begin = chrono::high_resolution_clock::now();
+
+    for(int i=0; i<1000000; i++) {
+        int randNum{rand() % 80 + 1};
+        nodes.push_back(new node(randNum));
+        bst.insert(nodes.at(i));
+    }
+
+    auto t1 = chrono::high_resolution_clock::now();
+    auto insertion = chrono::duration_cast<chrono::nanoseconds>(t1-begin);
+
+    for(int i=0; i<1000000; i++) {
+        bst.deleteNode(nodes.at(i));
+    }
+
+    auto t2 = chrono::high_resolution_clock::now();
+    auto deletion = chrono::duration_cast<chrono::nanoseconds>(t2-t1);
+    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(t2-begin);
+
+    printf("Time Taken: %.4f s \n", elapsed.count()*1e-9 );
+    printf("Insertion Time: %.4f s \n", insertion.count()*1e-9 );
+    printf("Deletion Time: %.4f s \n", deletion.count()*1e-9);
+}
 int main() {
-    test1();
+    //test1();
+    test2();
     return 0;
 }

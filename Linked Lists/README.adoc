@@ -7,3 +7,53 @@
 * Singly Linked List
 * Doubly Linked List
 * Circular Linked List
+
+=== Performance Comparation
+The column titles express the insertion and deletion amount.
+
+*Singly Linked List*
+[width="100%",options="header"]
+|====================
+|C++        |100.000   |1.000.000 |10.000.000|100.000.000  
+|Instertion |0.0063 s  |0.052 s |0.628 s   |5.874 s     
+|Deletion   |0.0011 s  |0.003 s |0.024 s   |0.394 s   
+|Total      |0.0074 s  |0.055 s |0.652 s   |6.268 s   
+|====================
+[width="100%",options="header"]
+|====================
+|Python    |100.000   |1.000.000 |10.000.000|100.000.000   
+|Instertion|0.1067 s  |1.2357 s  |12.0414 s |-
+|Deletion  |0.0465 s  |0.4362 s  |4.0261 s  |-
+|Total     |0.1532 s  |1.6719 s  |16.0675 s |- 
+|====================
+*Doubly Linked List*
+[width="100%",options="header"]
+|====================
+|C++        |100.000    |1.000.000    |10.000.000|100.000.000 
+|Instertion |0.0062 s   |0.047 s      |0.463 s   |4.320 s     
+|Deletion   |0.0011 s   |0.008 s      |0.072 s   |0.764 s  
+|Total      |0.0073 s   |0.056 s      |0.535 s   |5.084 s   
+|====================
+[width="100%",options="header"]
+|====================
+|Python    |100.000   |1.000.000 |10.000.000|100.000.000   
+|Instertion|0.1167 s  |1.5548 s  |14.5241 s |-  
+|Deletion  |0.0389 s  |0.4092 s  |4.0246 s  |-
+|Total     |0.1556 s  |1.9640 s  |18.5488 s |-
+|====================
+
+*Circular Linked List*
+[width="100%",options="header"]
+|====================
+|C++        |100.000    |1.000.000    |10.000.000|100.000.000 
+|Instertion |0.0062 s   |0.047 s      |0.463 s   |4.320 s     
+|Deletion   |0.0011 s   |0.008 s      |0.072 s   |0.764 s  
+|Total      |0.0073 s   |0.056 s      |0.535 s   |5.084 s  
+|====================
+[width="100%",options="header"]
+|====================
+|Python    |100.000    |1.000.000 |10.000.000|100.000.000    
+|Instertion|0.0728 s   |   |  |  
+|Deletion  |352.1795 s |   |  |
+|Total     |352.2523 s |   |  | 
+|====================

@@ -120,16 +120,25 @@ class Node:
 
 
 def test1():
-    start = time.time()
+    begin = time.time()
+
     dList = DoublyLinkedList()
-    for i in range(100000):
+    for i in range(10000000):
         dList.insert(i)
-    insertionTime = time.time() - start
-    for i in range(100000):
+
+    t1 = time.time()
+    insertion = t1 - begin
+
+    for i in range(10000000):
         dList.deleteNode(i)
 
-    print("Time taken: {:.4f}".format(time.time() - start))
-    print("Insertion Time: {:.4f}".format(insertionTime))
+    end = time.time()
+    deletion = end - t1
+    elapsed = end - begin
+
+    print("Insertion : {:.4f} s".format(insertion))
+    print("Deletion : {:.4f} s".format(deletion))
+    print("Time taken: {:.4f} s ".format(elapsed))
 
 
 def test2():
@@ -156,6 +165,6 @@ def test3():
 
 
 if __name__ == '__main__':
-    # test1()
-    test2()
+    test1()
+    # test2()
     # test3()

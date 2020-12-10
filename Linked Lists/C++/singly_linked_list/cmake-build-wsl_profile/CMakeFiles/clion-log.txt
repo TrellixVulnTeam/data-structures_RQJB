@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/mnt/d/GitRepos/data-structures/Linked Lists/singly_linked_list"
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/mnt/d/GitRepos/data-structures/Linked Lists/C++/singly_linked_list"
 -- The C compiler identification is GNU 9.3.0
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /mnt/d/GitRepos/data-structures/Linked Lists/singly_linked_list/cmake-build-wsl_profile
+-- Build files have been written to: /mnt/d/GitRepos/data-structures/Linked Lists/C++/singly_linked_list/cmake-build-wsl_profile

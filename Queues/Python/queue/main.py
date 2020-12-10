@@ -63,15 +63,24 @@ def test1():
 
 def test2():
     queue = Queue()
-    start = time.time()
+    begin = time.time()
 
-    for i in range(100000):
+    for i in range(1000000):
         queue.enque(i)
 
-    for i in range(100000):
+    t1 = time.time()
+    insertion = t1 - begin
+
+    for i in range(1000000):
         queue.deque()
 
-    print("Time taken: {:.4f}".format(time.time() - start))
+    end = time.time()
+    deletion = end - t1
+    elapsed = end - begin
+
+    print("Insertion : {:.4f} s".format(insertion))
+    print("Deletion : {:.4f} s".format(deletion))
+    print("Time taken: {:.4f} s ".format(elapsed))
 
 
 if __name__ == '__main__':

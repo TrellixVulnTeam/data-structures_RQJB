@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 
@@ -74,8 +75,7 @@ public:
         temp->next=it->next;
         it->next=temp;
         temp->value=value;
-        return;
-    }
+   }
 
     void deleteNode(int value){
         if(head== nullptr)
@@ -111,30 +111,30 @@ public:
         temp=it->next;
         it->next=it->next->next;
         free(temp);
-        return;
-    }
+   }
 };
 
 void test1(){ // Standart ekleme ve silme işlemleri
-    clock_t tStart = clock();
+    auto begin = chrono::high_resolution_clock::now();
 
     CircularLinkedList test;
 
     for(int i=1; i<=100000; i++)
         test.insert(i);
 
-    clock_t insertionTime = clock();
-    clock_t t1 = insertionTime-tStart;
+    auto t1 = chrono::high_resolution_clock::now();
+    auto insertion = chrono::duration_cast<chrono::nanoseconds>(t1-begin);
 
     for(int i=1; i<=100000; i++)
         test.deleteNode(i);
 
-    clock_t deleteTime = clock();
-    clock_t t2 = deleteTime-insertionTime;
+    auto t2 = chrono::high_resolution_clock::now();
+    auto deletion = chrono::duration_cast<chrono::nanoseconds>(t2-t1);
+    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(t2-begin);
 
-    printf("Time taken: %.4fs\n", (double) (clock() - tStart) / CLOCKS_PER_SEC);
-    printf("Insertion Time: %.4fs\n", (double) t1 / CLOCKS_PER_SEC);
-    printf("Delete Time: %.4fs\n", (double) t2 / CLOCKS_PER_SEC);
+    printf("Time Taken: %.4f s \n", elapsed.count()*1e-9 );
+    printf("Insertion Time: %.4f s \n", insertion.count()*1e-9 );
+    printf("Deletion Time: %.4f s \n", deletion.count()*1e-9);
 }
 void test2(){ //Sıralı ekleme
     CircularLinkedList test;

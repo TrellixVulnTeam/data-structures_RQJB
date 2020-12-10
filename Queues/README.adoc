@@ -4,3 +4,21 @@ Implemented by using Linked List
 * https://github.com/tayfunkscu/data-structures/tree/main/Queues/C%2B%2B/queque[C++ Examples]
 
 * https://github.com/tayfunkscu/data-structures/tree/main/Queues/Python/queue[Python Examples]
+
+=== Performance Comparation
+The column titles express the insertion and deletion amount.
+
+[width="100%",options="header"]
+|====================
+|C++        |100.000   |1.000.000 |10.000.000 |100.000.000  
+|Instertion |0.0054 s  |0.0547 s  |0.0235 s   |4.5998 s     
+|Deletion   |0.0005 s  |0.0033 s  |0.4842 s   |0.2997 s   
+|Total      |0.0059 s  |0.0580 s  |0.5077 s   |4.8995 s   
+|====================
+[width="100%",options="header"]
+|====================
+|Python    |100.000   |1.000.000 |10.000.000|100.000.000   
+|Instertion|0.1267 s  |1.3912 s  |13.9571 s |-
+|Deletion  |0.0528 s  |0.4518 s  |4.6497 s  |-
+|Total     |0.1795 s  |1.8430 s  |18.6069 s |- 
+|====================

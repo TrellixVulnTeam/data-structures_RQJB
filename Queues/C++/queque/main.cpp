@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -77,23 +78,24 @@ void test1(){
 }
 void test2(){
     Queue queue;
-    clock_t tStart = clock();
+    auto begin = chrono::high_resolution_clock::now();
 
-    for(int i=0; i<10000000; i++)
+    for(int i=0; i<100000000; i++)
         queue.enque(i);
 
-    clock_t insertionTime = clock();
-    clock_t t1 = insertionTime-tStart;
+    auto t1 = chrono::high_resolution_clock::now();
+    auto insertion = chrono::duration_cast<chrono::nanoseconds>(t1-begin);
 
-    for(int i=0; i<10000000; i++)
+    for(int i=0; i<100000000; i++)
         queue.deque();
 
-    clock_t deleteTime = clock();
-    clock_t t2 = deleteTime-insertionTime;
+    auto t2 = chrono::high_resolution_clock::now();
+    auto deletion = chrono::duration_cast<chrono::nanoseconds>(t2-t1);
+    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(t2-begin);
 
-    printf("Time taken: %.4fs\n", (double) (clock() - tStart) / CLOCKS_PER_SEC);
-    printf("Insertion Time: %.4fs\n", (double) t1 / CLOCKS_PER_SEC);
-    printf("Delete Time: %.4fs\n", (double) t2 / CLOCKS_PER_SEC);
+    printf("Time Taken: %.4f s \n", elapsed.count()*1e-9 );
+    printf("Insertion Time: %.4f s \n", insertion.count()*1e-9 );
+    printf("Deletion Time: %.4f s \n", deletion.count()*1e-9);
 }
 int main() {
     //test1();

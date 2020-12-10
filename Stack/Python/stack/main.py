@@ -76,15 +76,24 @@ def test1():
 
 def test2():
     stack = Stack()
-    start = time.time()
+    begin = time.time()
 
-    for i in range(100000):
+    for i in range(100000000):
         stack.push(i)
 
-    for i in range(100000):
+    t1 = time.time()
+    insertion = t1 - begin
+
+    for i in range(100000000):
         stack.pop()
 
-    print("Time taken: {:.4f}".format(time.time() - start))
+    end = time.time()
+    deletion = end - t1
+    elapsed = end - begin
+
+    print("Insertion : {:.4f} s".format(insertion))
+    print("Deletion : {:.4f} s".format(deletion))
+    print("Time taken: {:.4f} s ".format(elapsed))
 
 
 if __name__ == '__main__':
