@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MaxHeap.cpp
+MaxHeap.h
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MaxHeap.h
+iostream
+-
+climits
+-
+
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MaxHeap.h
+vector
+-
+
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MinHeap.cpp
+MinHeap.h
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MinHeap.h
+climits
+-
+
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MinHeap.h
+
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/main.cpp
+iostream
+-
+MaxHeap.h
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MaxHeap.h
+MaxHeap.cpp
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MaxHeap.cpp
+MinHeap.h
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MinHeap.h
+MinHeap.cpp
+/mnt/d/GitRepos/data-structures/Heaps/C++/Heaps/MinHeap.cpp
+

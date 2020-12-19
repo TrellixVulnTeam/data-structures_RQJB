@@ -1,0 +1,6 @@
+== Stack
+Implemented by using Linked List
+
+* https://github.com/tayfunkscu/data-structures/tree/main/Heaps/C%2B%2B/Heaps[C++ Examples]
+
+* https://github.com/tayfunkscu/data-structures/tree/main/Heaps/Python/Heaps[Python Examples]
