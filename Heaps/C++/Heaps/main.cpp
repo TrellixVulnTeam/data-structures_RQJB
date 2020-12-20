@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include "MaxHeap.h"
 #include "MaxHeap.cpp"
 #include "MinHeap.h"
@@ -40,16 +41,45 @@ void test2(){
 
 void test3(){
     MinHeap heap(9);
-    vector<int> vec{7,6,8,5,9,4,10,2,3};
+    vector<int> vec{7,6,8,5,9,4,10,2,3,1,20};
 
     for(int &key:vec)
         heap.insert(key);
 
     heap.display();
 }
+
+void MaxHeapImplementedWithPriorityQueue(){
+    priority_queue<int> pq;
+
+    vector<int> vec{7,6,8,5,9,4,10,2,3};
+
+    for(int &key:vec)
+        pq.push(key);
+
+    while (!pq.empty()){
+        cout<<pq.top()<<" ";
+        pq.pop();
+    }
+}
+void MinHeapImplementedWithPriorityQueue(){
+    priority_queue<int, vector<int>, greater<>> pq;
+
+    vector<int> vec{7,6,8,5,9,4,10,2,3};
+
+    for(int &key:vec)
+        pq.push(key);
+
+    while (!pq.empty()){
+        cout<<pq.top()<<" ";
+        pq.pop();
+    }
+}
 int main() {
-    test1();
+    //test1();
     //test2();
-    //test3();
+    test3();
+    //MaxHeapImplementedWithPriorityQueue();
+    //MinHeapImplementedWithPriorityQueue();
     return 0;
 }
