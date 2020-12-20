@@ -7,7 +7,7 @@ private:
     int *arr;
     int size;
 public:
-    explicit MinHeap();
+    explicit MinHeap(int capacity);
     static int parent(int i);
     static int left(int i);
     static int right(int i);
@@ -16,7 +16,6 @@ public:
     int popMin();
     void decreaseKey(int i, int key);
     void insert(int key);
-    int * heapSort();
     void display();
     static void swap(int *x, int *y);
 };

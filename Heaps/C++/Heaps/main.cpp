@@ -39,24 +39,17 @@ void test2(){
 }
 
 void test3(){
-    MinHeap heap;
+    MinHeap heap(9);
     vector<int> vec{7,6,8,5,9,4,10,2,3};
 
     for(int &key:vec)
         heap.insert(key);
 
-    cout<<heap.getMin()<<endl;
     heap.display();
-
-    cout<<heap.popMin();
-    int *sortedHeap = heap.heapSort();
-
-    cout<<sortedHeap[0];
-
 }
 int main() {
-    //test1();
+    test1();
     //test2();
-    test3();
+    //test3();
     return 0;
 }

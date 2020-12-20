@@ -1,8 +1,8 @@
 #include "MinHeap.h"
 #include<climits>
 
-MinHeap::MinHeap() :size{0}{
-    arr = new int[1];
+MinHeap::MinHeap(int capacity) :size{0}{
+    arr = new int[capacity];
 }
 
 int MinHeap::parent(int i) {
@@ -79,16 +79,6 @@ void MinHeap::insert(int key) {
     size++;
     arr[size-1] = INT_MAX;
     decreaseKey(size-1, key);
-}
-
-int *MinHeap::heapSort() {
-    int *sortedHeap = new int[size];
-
-    for (int i=0; i<size; i++){
-        sortedHeap[i] = popMin();
-    }
-
-    return sortedHeap;
 }
 
 void MinHeap::display() {
