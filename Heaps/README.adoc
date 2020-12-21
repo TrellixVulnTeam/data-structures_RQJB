@@ -1,5 +1,11 @@
 == Heaps
 
 * https://github.com/tayfunkscu/data-structures/tree/main/Heaps/C%2B%2B/Heaps[C++ Examples]
+** Implemented by using;
+*** MinHeap and MaxHeap classes
+*** Priority Queue
+*** STL Heap functions
 
 * https://github.com/tayfunkscu/data-structures/tree/main/Heaps/Python/Heaps[Python Examples]
+** Implemented by using;
+*** Priority Queue

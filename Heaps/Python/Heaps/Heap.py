@@ -1,4 +1,4 @@
-from heapq import heappush, heappop, heapify
+from heapq import heappush, heappop
 
 
 class MinHeap:
