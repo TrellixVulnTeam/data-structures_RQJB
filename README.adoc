@@ -4,3 +4,4 @@
 * https://github.com/tayfunkscu/data-structures/tree/main/Queues[Queues]
 * https://github.com/tayfunkscu/data-structures/tree/main/Trees[Trees]
 * https://github.com/tayfunkscu/data-structures/tree/main/Heaps[Heaps]
+* https://github.com/tayfunkscu/data-structures/tree/main/Hash%20Tables[Hash Tables]
