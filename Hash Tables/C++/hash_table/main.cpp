@@ -32,8 +32,11 @@ void find(const unordered_map<int, int>& map, const int& element){
 }
 
 int main() {
-    cout<<"Set example: "<<endl;
-    unordered_set<int> set = {1,2,3,4,5};
+    cout<<"Unordered Set example: "<<endl;
+    unordered_set<int> set;
+    for(int i=1; i<6; i++)
+        set.insert(i);
+
     cout<<"Initial set: ";
     print(set);
 
@@ -52,25 +55,24 @@ int main() {
     set.erase(2);
     cout<<"Erased 2 from set"<<endl;
 
-    cout<<"Map example: "<<endl;
-    unordered_map<int, int> map;
+    cout<<"Unordered Map example: "<<endl;
 
-    map.insert({2, 4});
-    map[3]=9;
+    unordered_map<int, int> squareMap;
+
+    squareMap.insert({2, 4});
+    squareMap[3]=9;
     cout<<"After inserting squares of 2 and 3 = ";
-    print(map);
-    cout<<endl;
+    print(squareMap);
 
-    map[30]=900;
-    map[20]=400;
+    squareMap[30]=900;
+    squareMap[20]=400;
     cout<<"After inserting squares of 20 and 30 = ";
-    print(map);
+    print(squareMap);
 
-    find(map, 10);
-    find(map, 20);
-    cout<<"Value of map[3] = "<<map[3]<<endl;
-    cout<<"Value of map[100] = "<<map[100]<<endl;
-
+    find(squareMap, 10);
+    find(squareMap, 20);
+    cout<<"Value of map[3] = "<<squareMap[3]<<endl;
+    cout<<"Value of map[100] = "<<squareMap[100]<<endl;
 
     return 0;
 }
