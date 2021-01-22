@@ -1,0 +1,3 @@
+/mnt/d/GitRepos/data-structures/Trees/C++/avl_tree/cmake-build-wsl_profile/CMakeFiles/rebuild_cache.dir
+/mnt/d/GitRepos/data-structures/Trees/C++/avl_tree/cmake-build-wsl_profile/CMakeFiles/avl_tree.dir
+/mnt/d/GitRepos/data-structures/Trees/C++/avl_tree/cmake-build-wsl_profile/CMakeFiles/edit_cache.dir

@@ -74,5 +74,7 @@ int main() {
     cout<<"Value of map[3] = "<<squareMap[3]<<endl;
     cout<<"Value of map[100] = "<<squareMap[100]<<endl;
 
+
+
     return 0;
 }

@@ -1,3 +1,0 @@
-/mnt/d/GitRepos/data-structures/Hash Tables/C++/hash_table/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/d/GitRepos/data-structures/Hash Tables/C++/hash_table/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/GitRepos/data-structures/Hash Tables/C++/hash_table/cmake-build-debug/CMakeFiles/hash_table.dir
