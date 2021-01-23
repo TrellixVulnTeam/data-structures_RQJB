@@ -11,5 +11,8 @@ int main() {
 
     tree.printInorder();
 
+    tree.remove(10);
+    tree.printInorder();
+
     return 0;
 }

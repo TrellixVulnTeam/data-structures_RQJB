@@ -13,13 +13,13 @@ public:
 
     node * root{nullptr};
     void insert(int value){
-        root=insertUtil(root, value);
+        root=insert(root, value);
     }
     void remove(int value){
-        root=removeUtil(root, value);
+        root=remove(root, value);
     }
     void printInorder(){
-        inorderUtil(root);
+        inOrder(root);
         cout<<endl;
     }
 private:
@@ -45,23 +45,23 @@ private:
         return newHead;
     }
 
-    void inorderUtil(node * head){
+    void inOrder(node * head){
         if(head== nullptr)
             return ;
-        inorderUtil(head->left);
+        inOrder(head->left);
         cout<<head->key<<" ";
-        inorderUtil(head->right);
+        inOrder(head->right);
     }
 
-    node * insertUtil(node * head, int value){
+    node * insert(node * head, int value){
         if(head== nullptr){
             node * temp = new node(value);
             return temp;
         }
         if(value < head->key)
-            head->left = insertUtil(head->left, value);
+            head->left = insert(head->left, value);
         else if(value > head->key)
-            head->right = insertUtil(head->right, value);
+            head->right = insert(head->right, value);
 
         head->height = 1 + max(height(head->left), height(head->right));
         int balance = height(head->left) - height(head->right);
@@ -83,13 +83,13 @@ private:
         }
         return head;
     }
-    static node * removeUtil(node * head, int value){
+    static node * remove(node * head, int value){
         if(head==nullptr)
             return nullptr;
         if(value < head->key){
-            head->left = removeUtil(head->left, value);
+            head->left = remove(head->left, value);
         }else if(value > head->key){
-            head->right = removeUtil(head->right, value);
+            head->right = remove(head->right, value);
         }else{
             node * right = head->right;
             if(head->right==nullptr){
@@ -103,7 +103,7 @@ private:
                 while(right->left!=nullptr)
                     right = right->left;
                 head->key = right->key;
-                head->right = removeUtil(head->right, right->key);
+                head->right = remove(head->right, right->key);
             }
         }
         if(head==nullptr)
