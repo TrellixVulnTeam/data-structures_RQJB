@@ -7,3 +7,4 @@
 === Contents
 * Binary Search Tree
 * AVL Tree
+* Splay Tree
