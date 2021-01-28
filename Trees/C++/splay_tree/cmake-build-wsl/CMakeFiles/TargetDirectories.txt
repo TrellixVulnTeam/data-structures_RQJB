@@ -1,0 +1,3 @@
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/cmake-build-wsl/CMakeFiles/rebuild_cache.dir
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/cmake-build-wsl/CMakeFiles/edit_cache.dir
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/cmake-build-wsl/CMakeFiles/splay_tree.dir

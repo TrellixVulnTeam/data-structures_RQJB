@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/SplayTree.cpp
+SplayTree.h
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/SplayTree.h
+iostream
+-
+
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/SplayTree.h
+
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/main.cpp
+iostream
+-
+SplayTree.h
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/SplayTree.h
+SplayTree.cpp
+/mnt/d/GitRepos/data-structures/Trees/C++/splay_tree/SplayTree.cpp
+
