@@ -68,7 +68,6 @@ public:
             }
         }
 
-        // y is parent of x
         Node->parent = y;
         if (y == nullptr) {
             root = Node;
@@ -78,7 +77,6 @@ public:
             y->right = Node;
         }
 
-        // splay the node
         splay(Node);
     }
 

@@ -59,7 +59,6 @@ void SplayTree::leftRotate(node* x) {
     x->parent = y;
 }
 
-// rotate right at node x
 void SplayTree::rightRotate(node* x) {
     node* y = x->left;
     x->left = y->right;
