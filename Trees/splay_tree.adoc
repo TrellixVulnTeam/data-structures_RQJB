@@ -2,7 +2,7 @@
 
 Splay ağacı, ikili arama ağacının başka bir çeşididir. Bir splay ağacında, en son erişilen düğüm ağacın köküne yerleştirilir. Bir splay ağacı aşağıdaki gibi tanımlanır.
 
-Splay Tree, düğüm üzerindeki her işlemin, düğümün ağacın kök konumuna yerleştirilmesi için ağacı yeniden düzenlendiği kendinden ayarlı bir İkili Arama Ağacıdır.
+Splay ağacı, düğüm üzerindeki her işlemin, düğümün ağacın kök konumuna yerleştirilmesi için ağacı yeniden düzenlendiği kendinden ayarlı bir İkili Arama Ağacıdır.
 
 Bir splay ağacında, her işlem ağacın kökünde gerçekleştirilir. Splay ağacındaki tüm işlemler "Splaying" adı verilen ortak bir işlemle ilgilidir.
 
@@ -58,11 +58,11 @@ image::img/6.png[]
 
 Splay ağacındaki ekleme işlemi aşağıdaki adımlar kullanılarak gerçekleştirilir ...
 
-* Adım 1 - Ağacın Boş olup olmadığını kontrol edin.
-* Adım 2 - Ağaç Boşsa, yeni düğümü Kök düğüm olarak ekleyin ve işlemden çıkın.
-* Adım 3 - Ağaç Boş değilse, İkili Arama ağaç ekleme mantığını kullanarak yeni Düğümü yaprak düğümü olarak ekleyin.
+* Adım 1 - Ağacın boş olup olmadığını kontrol edin.
+* Adım 2 - Ağaç boşsa, yeni düğümü Kök düğüm olarak ekleyin ve işlemden çıkın.
+* Adım 3 - Ağaç boş değilse, İkili Arama ağaç ekleme mantığını kullanarak yeni düğümü ekleyin.
 * Adım 4 - Ekledikten sonra düğüm üzerinde splaying işlemini yapın.
 
-=== Splay Ağacına'dd Silme İşlemi
+=== Splay Ağacında Silme İşlemi
 
 Splay ağacındaki silme işlemi İkili Arama Ağacındaki silme işlemine benzer. Ancak öğeyi silmeden önce, önce o düğüme splaying işlemi uygulamamız ve ardından onu kök konumundan silmemiz gerekir.
